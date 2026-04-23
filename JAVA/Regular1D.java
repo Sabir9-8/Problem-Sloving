@@ -1,8 +1,6 @@
 package JAVA;
-
 import java.util.Scanner;
-
-public class ArrayIntro
+public class Regular1D
 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
