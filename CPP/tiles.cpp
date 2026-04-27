@@ -1,14 +1,15 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-bool checkNextOne(int i, j) {
+
+bool checkNextOne(int i, int j, vector<string> &sq) {
     if (sq[i][j] == '.') return true;
     else return false;
 }
 
-bool checkNextThree(int i, int j) {
+bool checkNextThree(int i, int j, vector<string> &sq) {
     if (sq[i][j-1] == '.' && sq[i][j] == '.' && sq[i][j+1]) {
-        bool nextOne = checkNextOne(i+1, j);
+        bool nextOne = checkNextOne(i+1, j, sq);
         return nextOne;
     }
     else return false;
@@ -25,7 +26,7 @@ int main()
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (sq[i][j] == '.') {
-                bool next = checkNextThree(i+1, j);
+                bool next = checkNextThree(i+1, j, sq);
                 if (!next) {
                     cout << "NO";
                 }
